@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;/*CONTENT CENTER HORIZONTALLY*/
+    align-items: center;/*CONTENT CENTER VERTICALLY*/
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;/*BACKGROUND COLOR*/
+}
+
+.button {
+    display: flex;
+    justify-content: center;/*CONTENT CENTER HORIZONTALLY*/
+    align-items: center;/*CONTENT CENTER VERTICALLY*/
+}
+
+.design-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;/*CURSOR*/
+    border-radius: 8px;/*RADIUS*/
+    color: #fff;
+    background: linear-gradient(45deg, #ff6b6b, #f94d6a, #fcb045, #6a4bc4, #ff6b6b);/*COLOR*/
+    background-size: 400%;
+    animation: gradientShift 5s ease infinite;
+    transition: background 0.5s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;/*HOVER*/
+    }
+    50% {
+        background-position: 100% 50%;/*HOVER*/
+    }
+    100% {
+        background-position: 0% 50%;/*HOVER*/
+    }
+}
+
+.design-button:hover {
+    background: linear-gradient(45deg, #00c6ff, #0072ff, #00ff99, #d0ff4f, #00c6ff);/*COLOR*/
+    animation: gradientShiftHover 5s ease infinite;/*TO ANIMATE*/
+    transform: scale(1.05);/*TO SLIGHTLY ENLARGE THE BUTTON*/
+}
+
+@keyframes gradientShiftHover {
+    0% {
+        background-position: 0% 50%;/*HOVER GRADINT*/
+    }
+    50% {
+        background-position: 100% 50%;/*HOVER GRADINT*/
+    }
+    100% {
+        background-position: 0% 50%;/*HOVER GRADIENT*/
+    }
+}
+
+.design-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* THE SVG FILLS WITH THE BUTTON TEXT COLOR*/
+    transition: transform 0.3s ease;
+}
+
+.design-button:hover svg {
+    transform: rotate(30deg) scale(1.3); /*TO ROTATES AND SCALES UP ON HOVER THE SVG. */
+}
+
+.design-button span {
+    position: relative;/*TEXT RELATIVE TO BUTTON*/
+    z-index: 1;
+    margin-right: 30px;/*SPACE TO THE RIGHT SIDE OF THE BUTTON*/
+
+}
